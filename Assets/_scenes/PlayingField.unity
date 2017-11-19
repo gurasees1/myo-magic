@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 75372140}
   - component: {fileID: 75372139}
   - component: {fileID: 75372143}
+  - component: {fileID: 75372144}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -208,6 +209,17 @@ MonoBehaviour:
   spell_1: {fileID: 1586735496649668, guid: 259d05aa260f2714fa9b40fed9dca854, type: 2}
   spell_2: {fileID: 1730581536163530, guid: 07f91217ef85bbc44a8f8ee81b28593e, type: 2}
   spell_3: {fileID: 1303088788360502, guid: a0e1523bf9674d6439cae5ea28f984fc, type: 2}
+--- !u!114 &75372144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 75372138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c123aed2563e0548a2f5a577aeea5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &678513266
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +378,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 121470, guid: 289062a2b299f714980c64eaaa5623c5, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 289062a2b299f714980c64eaaa5623c5, type: 2}
   m_IsPrefabParent: 0
@@ -389,6 +405,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myo: {fileID: 1150061673}
+--- !u!114 &1478345845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1478345839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634019b586888224d9d61fc8bbfc6ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotateSpeed: 30
 --- !u!1 &1650148393
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +503,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1753622827 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012226140144, guid: 11db918338e063f4b86b6024c791e5a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1778319371}
+--- !u!114 &1753622830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1753622827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decc9e2001a74f94a9cf1b72974d9bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meteor: {fileID: 0}
 --- !u!1001 &1778319371
 Prefab:
   m_ObjectHideFlags: 0

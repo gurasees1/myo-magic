@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MeteorScript : MonoBehaviour {
 
-    public int direction;
+    public float x_direction;
+    public float y_direction;
+    public float z_direction;
 
     // Use this for initialization
     void Start () {
@@ -13,6 +15,6 @@ public class MeteorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(new Vector3(0, -0.5f, 1 * direction) * Time.deltaTime * 25);
+        transform.position += new Vector3(x_direction, y_direction, z_direction) * Time.deltaTime * 25;
     }
 }

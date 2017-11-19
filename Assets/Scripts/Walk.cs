@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoulderSpell : MonoBehaviour {
-
-    public float x_direction;
-    public float z_direction;
+public class Walk : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +11,9 @@ public class BoulderSpell : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(new Vector3(x_direction, 0, z_direction) * Time.deltaTime * 25);
+        var x = Input.GetAxis("Horizontal") * 0.2f;
+        var z = Input.GetAxis("Vertical") * 0.2f;
+
+        transform.Translate(x, 0, z);
     }
 }

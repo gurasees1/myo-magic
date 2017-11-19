@@ -11,8 +11,8 @@ public class Walk : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        var x = Input.GetAxis("Horizontal") * 0.2f;
-        var z = Input.GetAxis("Vertical") * 0.2f;
+        var x = Input.GetAxis("Horizontal") * 0.3f;
+        var z = Input.GetAxis("Vertical") * 0.3f;
 
         transform.Translate(x, 0, z);
     }

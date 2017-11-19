@@ -57,7 +57,7 @@ public class JointOrientation : MonoBehaviour
             // _antiYaw represents a rotation of the Myo armband about the Y axis (up) which aligns the forward
             // vector of the rotation with Z = 1 when the wearer's arm is pointing in the reference direction.
             _antiYaw = Quaternion.FromToRotation (
-                new Vector3 (myo.transform.forward.x, 0, myo.transform.forward.z),
+                new Vector3 (myo.transform.forward.x, myo.transform.forward.y, myo.transform.forward.z),
                 new Vector3 (0, 0, 1)
             );
 
@@ -84,7 +84,7 @@ public class JointOrientation : MonoBehaviour
         // Here the anti-roll and yaw rotations are applied to the myo Armband's forward direction to yield
         // the orientation of the joint.
         transform.rotation = _antiYaw * antiRoll * Quaternion.LookRotation (myo.transform.forward);
-
+        
         // The above calculations were done assuming the Myo armbands's +x direction, in its own coordinate system,
         // was facing toward the wearer's elbow. If the Myo armband is worn with its +x direction facing the other way,
         // the rotation needs to be updated to compensate.

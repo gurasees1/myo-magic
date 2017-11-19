@@ -3,9 +3,9 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace DigitalRuby.LightningBolt
+namespace DigitalRuby.PyroParticles
 {
-    [CustomEditor(typeof(LightningBoltScript))]
+    [CustomEditor(typeof(FireBaseScript))]
     public class LightningBoltEditor : Editor
     {
         private Texture2D logo;
@@ -14,7 +14,7 @@ namespace DigitalRuby.LightningBolt
         {
             if (logo == null)
             {
-                string[] guids = AssetDatabase.FindAssets("LightningBoltLogo");
+                string[] guids = AssetDatabase.FindAssets("PyroParticlesLogo");
                 foreach (string guid in guids)
                 {
                     string path = AssetDatabase.GUIDToAssetPath(guid);

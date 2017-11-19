@@ -27,21 +27,24 @@ public class PlayerMove : MonoBehaviour {
 	void Update () {
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
 
-        if (thalmicMyo.pose == Pose.WaveIn && endTime < DateTime.Now.TimeOfDay.TotalSeconds) {
+        if (Input.GetKeyDown("a") && endTime < DateTime.Now.TimeOfDay.TotalSeconds) {
             GameObject spell = Instantiate((GameObject)spell_1, new Vector3(0, 3, -13), transform.rotation) as GameObject;
             spell.gameObject.GetComponent<BoulderSpell>().z_direction = 1;
-            spell.gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 25);
-            endTime = DateTime.Now.TimeOfDay.TotalSeconds + 1;
+            endTime = DateTime.Now.TimeOfDay.TotalSeconds + 2;
             ExtendUnlockAndNotifyUserAction(thalmicMyo);
         }
 
-        if (Input.GetKeyDown("s")) {
-            Instantiate((GameObject)spell_2, new Vector3(0, 3, -13), transform.rotation);
+        if (Input.GetKeyDown("s") && endTime < DateTime.Now.TimeOfDay.TotalSeconds) {
+            GameObject spell = Instantiate((GameObject)spell_2, new Vector3(0, 20, -20), transform.rotation) as GameObject;
+            spell.gameObject.GetComponent<MeteorScript>().direction = 1;
+            endTime = DateTime.Now.TimeOfDay.TotalSeconds + 2;
         }
 
-        if (Input.GetKeyDown("d")) {
+        if (Input.GetKeyDown("d") && endTime < DateTime.Now.TimeOfDay.TotalSeconds) {
             GameObject spell = Instantiate((GameObject)spell_3, new Vector3(0, 0, 0), transform.rotation) as GameObject;
-            
+            spell.gameObject.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>().StartPosition = new Vector3(0, 2.5f, -18);
+            spell.gameObject.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>().EndPosition = new Vector3(0, 3, 20);
+            endTime = DateTime.Now.TimeOfDay.TotalSeconds + 2;
         }
     }
     void ExtendUnlockAndNotifyUserAction(ThalmicMyo myo)

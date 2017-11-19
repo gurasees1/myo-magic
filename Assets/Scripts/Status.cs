@@ -13,7 +13,7 @@ public class Status : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("Boulder")) {
+        if (col.gameObject.CompareTag("Boulder") || col.gameObject.CompareTag("Lightning")) {
             Destroy(gameObject);
             mainCamera.gameObject.GetComponent<Score>().score++;
         }

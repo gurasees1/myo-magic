@@ -48,7 +48,7 @@ public class PlayerMove : MonoBehaviour {
         if (Input.GetKeyDown("c") && endTime < DateTime.Now.TimeOfDay.TotalSeconds) {
             GameObject spell = Instantiate((GameObject)spell_3, new Vector3(0, 0, 0), transform.rotation) as GameObject;
             spell.gameObject.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>().StartPosition = mainCamera.transform.position + new Vector3(0, -0.5f, 2);
-            spell.gameObject.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>().EndPosition = mainCamera.transform.position + new Vector3(0, 0, 40);
+            spell.gameObject.GetComponent<DigitalRuby.LightningBolt.LightningBoltScript>().EndPosition = mainCamera.transform.position + new Vector3(0, 0, 60);
             endTime = DateTime.Now.TimeOfDay.TotalSeconds + 2;
         }
     }
